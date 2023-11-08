@@ -168,10 +168,10 @@ class BME280:
         """
         temp, pres, humi = self.read_compensated_data()
         #Adjust temperature and convert to Farenheit
-        temp /= -185
+        temp /= -170
         temp = 9/5 * temp + 32
         #Adjust humidity
-        humi /= (0.7 * 1024)
+        humi /= (0.9 * 1024)
         #Adjust pressure and convert from hPa to inHg
         pres /= -1900000
         pres /= 33.864
